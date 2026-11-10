@@ -202,16 +202,35 @@ p { margin: 0 0 1em; }
 .header.open .nav-toggle span::before { top: 0; transform: rotate(45deg); }
 .header.open .nav-toggle span::after { top: 0; transform: rotate(-45deg); }
 
-.header .play-link-header { display: none; }
+.header .store-link-header { display: none; }
 
-.play-badge {
-  display: inline-block;
-  line-height: 0;
+.store-badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 8px;
 }
-.play-badge img {
-  height: 56px;
+
+.store-badge {
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+  text-decoration: none;
+}
+
+.store-badge img {
+  display: block;
   width: auto;
-  margin: -8px;
+}
+
+/* Play badge asset has ~41px padding on a 250px canvas; 60px CSS height ≈ 40px visual, matching the official App Store SVG. */
+.store-badge--play img {
+  height: 60px;
+  margin: -10px;
+}
+
+.store-badge--apple img {
+  height: 40px;
 }
 
 /* Hero */
@@ -696,8 +715,9 @@ details.faq-item .answer p:last-child { margin-bottom: 0; }
   .nav { display: flex; }
   .nav-toggle { display: none; }
   .nav-panel { display: none !important; }
-  .header .play-link-header { display: inline-block; }
-  .header .play-link-header img { height: 52px; margin: -8px; }
+  .header .store-link-header { display: flex; }
+  .header .store-badge--play img { height: 54px; margin: -9px; }
+  .header .store-badge--apple img { height: 36px; }
   .hero-grid {
     grid-template-columns: 1.1fr 0.9fr;
     grid-template-areas:
