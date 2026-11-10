@@ -223,10 +223,9 @@ p { margin: 0 0 1em; }
   width: auto;
 }
 
-/* Play badge asset has ~41px padding on a 250px canvas; 60px CSS height ≈ 40px visual, matching the official App Store SVG. */
+/* Play badge PNG is trimmed to its visible edge, so both badges share the same height. */
 .store-badge--play img {
-  height: 60px;
-  margin: -10px;
+  height: 40px;
 }
 
 .store-badge--apple img {
@@ -716,7 +715,7 @@ details.faq-item .answer p:last-child { margin-bottom: 0; }
   .nav-toggle { display: none; }
   .nav-panel { display: none !important; }
   .header .store-link-header { display: flex; }
-  .header .store-badge--play img { height: 54px; margin: -9px; }
+  .header .store-badge--play img { height: 36px; }
   .header .store-badge--apple img { height: 36px; }
   .hero-grid {
     grid-template-columns: 1.1fr 0.9fr;
